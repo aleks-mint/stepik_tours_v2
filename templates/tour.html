@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block main %}
+  <main class="container">
+    <section class="mt-3 pb-5">
+      <h1 class="display-3 mt-4">{{ tours_id.title}} {{ stars }}</h1>
+      <!-- HERO -->
+      <p class="lead">{{ tours_id.country }} {{ departures_tours }} {{ tours_id.nights }} ночей</p>
+      <img src="{{ tours_id.picture }}" class="w-75" alt="">
+      <p class="my-4 w-75">{{ tours_id.description }}</p>
+      <a href="#" class="btn btn-success btn-lg">Купить тур за {{ price }}</a>
+    </section>
+  </main>
+{% endblock %}

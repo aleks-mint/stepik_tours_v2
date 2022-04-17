@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block main %}
+  <main class="container mt-3">
+    <h1 class="display-5 mt-4">Летим {{ depart_city }}</h1>
+    <p class="mb-4">Найдено {{ depart_count }} туров, от {{ price_min }} до {{ price_max }} и от {{ nights_min }} ночей до
+        {{ nights_max }} ночей</p>
+      <!-- CARDS -->
+    <div class="row mt-5">
+        {% for keys, values in hotels.items %}
+      <div class="col-4">
+        <div class="card mb-4">
+          <img src="https://place-hold.it/300x200" class="card-img-top img-fluid" alt="">
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ values.title }}</h2>
+            <p class="card-text">{{ values.description }}</p>
+            <a href="/tour/{{ keys }}" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+  </main>
+{% endblock %}
